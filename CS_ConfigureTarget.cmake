@@ -1,3 +1,5 @@
+include_guard(GLOBAL)
+
 # function to set up many things at once for a given target
 function(cs_configure_target TARGET)
     cmake_parse_arguments(PARSE_ARGV 1 "CONFIGURE_TARGET" "LOGO;MANIFEST" "" "")
