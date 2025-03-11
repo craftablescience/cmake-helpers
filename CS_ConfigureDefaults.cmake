@@ -1,3 +1,5 @@
+include_guard(GLOBAL)
+
 # run this directly after project() in the top level CMakeLists.txt
 macro(cs_configure_defaults LTO_OPTION)
     set(CMAKE_SKIP_BUILD_RPATH OFF)
