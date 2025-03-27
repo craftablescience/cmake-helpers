@@ -49,6 +49,12 @@ function(cs_configure_target TARGET)
                 if(CONFIGURE_TARGET_MANIFEST)
                     target_sources(${TARGET} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/res/program.manifest")
                 endif()
+
+                # Setup VS integration
+                set_target_properties(
+                        ${TARGET} PROPERTIES
+                        VS_DEBUGGER_COMMAND "$<TARGET_FILE:${TARGET}>"
+                        VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>")
             endif()
         endif()
 
